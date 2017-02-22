@@ -1,0 +1,23 @@
+@mixin mQ($arg...){
+	@if length($arg) == 1{
+		@media screen and (min-width: nth($arg, 1)){
+			@content;
+		}
+	}
+	@if length($arg) == 2{
+		@media screen and (min-width: nth($arg, 1)) and (max-width: nth($arg, 2)){
+			@content;
+		}
+	}
+}
+
+%clearfix {
+	*zoom: 1;
+
+	&:before, 
+	&:after {
+		content: " ";
+		display: table;
+	}
+	&:after{ clear: both; }
+}

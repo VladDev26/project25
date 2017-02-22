@@ -1,0 +1,65 @@
+@import 'vars';
+@import 'mixins';
+
+*{box-sizing:border-box;padding: 0;margin: 0;}
+a{text-decoration:none; display: inline-block;}
+ul{list-style: none;}
+img{max-width: 100%; height: auto;}
+
+html{font-size: 16px;}
+body{font-family: $font1;}
+h1,h2{font-weight: $bold;}
+
+
+.wrapper{
+	max-width: 1920px;
+	margin: 0 auto;
+}
+.container{
+	max-width: 902px;
+	margin: 0 auto;
+	width: 90%;
+	color: $dark;
+	padding: 2rem 0 2.5rem;
+	position: relative;
+	text-align: center;
+
+	&--inverse{color: $white;}
+	
+	@include mQ(960px){
+		padding: 6rem 0 6.5rem;
+	}
+}
+
+.table{
+	display: table;
+	width: 100%;
+	&__cell{
+		vertical-align: middle;
+		display: table-cell;
+	}
+}
+
+
+.hover{
+	&:hover{
+		opacity: .7;
+		transition: opacity .4s;
+	}
+}
+
+
+
+
+
+
+@import 'parts/header';
+@import 'parts/section';
+@import 'parts/services';
+@import 'parts/whatwedo';
+@import 'parts/contact';
+@import 'parts/portfolio';
+@import 'parts/footer';
+
+
+

@@ -1,0 +1,19 @@
+.button{
+	padding-top: 2rem;
+
+	a{
+		font-size: 1rem;
+		letter-spacing: 4px;
+		text-transform: uppercase;
+
+		color: $white;
+		background: $dark;
+		
+		max-width: 395px;
+		padding: 1rem;
+
+		@include mQ(960px){
+			width: 100%;
+		}
+	}
+}

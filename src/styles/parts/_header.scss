@@ -1,0 +1,94 @@
+.header{
+	background-color: $color3;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	text-transform: uppercase;
+	position: relative;
+	padding: 2rem 0;
+
+	max-height: 1072px;
+	min-height: 100vh;
+	
+	h1{
+		color: $white;
+		font-size: 2rem;
+		padding: 3rem 0 2rem;
+		letter-spacing: 4px;
+
+		@include mQ(960px){
+			font-size: 3.375rem;
+		}
+	}
+	p{
+		color: $white;
+		font-size: 0.938rem;
+		line-height: 2;
+		padding: 0 0 3rem;
+		max-width: 480px;
+		margin: 0 auto;
+	}
+	span{display: block;}
+}
+
+
+
+
+/* ---------------------------------------------- /*
+ * Mouse animate icon
+/* ---------------------------------------------- */
+.mouse{
+	border: 2px solid $white;
+	border-radius: 16px;
+	height: 40px;
+	width: 24px;
+	display: block;
+	z-index: 10;
+	opacity: 0.7;
+
+	position: absolute;
+	bottom: 10%;
+	left: 49.3%;
+
+	display: none;
+
+	@include mQ(960px){
+		display: block;
+	}
+
+	&__wheel{
+		animation-name: drop;
+		animation-duration: 1s;
+		animation-timing-function: linear;
+		animation-delay: 0s;
+		animation-iteration-count: infinite;
+		animation-play-state: running;
+
+		position: relative;
+		border-radius: 10px;
+		background: $white;
+		width: 4px;
+		height: 6px;
+		top: 4px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+@keyframes drop{
+	0% {
+		top: 5px;
+		opacity: 0;
+	}
+	30% {
+		top: 10px;
+		opacity: 1;
+	}
+	100% {
+		top: 25px;
+		opacity: 0;
+	}
+}
+/* ---------------------------------------------- /*
+ * Mouse animate icon
+/* ---------------------------------------------- */

@@ -1,0 +1,66 @@
+.section{
+	border: 2px solid $dark;
+	border-top: none;
+	text-align: center;
+	padding: 3rem 0;
+	position: relative;
+	&--inverse{
+		border-color: $white;
+		border-top: none;
+	}
+	&__head{
+		font-size: 1.5rem;
+	    font-weight: $bold;
+	    text-transform: uppercase;
+	    text-align: center;
+	    overflow: hidden;
+	    position: relative;
+	    width: 100%;
+	    top: 10px;
+		
+		@include mQ(960px){
+	    	top: 16px;
+	    	font-size: 2.125rem;
+		}
+
+	    &:before,
+	    &:after {
+	        background-color: $dark;
+	        content: "";
+	        display: inline-block;
+	        height: 2px;
+	        position: relative;
+	        vertical-align: middle;
+	        width: 50%;
+	    }
+	    &:before{
+	    	right: 0.5rem;
+	    	margin-left: -50%;
+	    }
+	    &:after{
+	        left: 0.5rem;
+	        margin-right: -50%;
+	    }
+	    &--inverse{
+	    	&:before,
+			&:after {
+				background-color: $white;
+			}
+	    }
+
+	    span{
+	    	display: inline-block;
+	    	min-width: 40%;
+	    }
+	}
+
+	p{
+		font-size: 1rem;
+		font-weight: $light;
+		line-height: 2;
+
+		width: 90%;
+		margin: 0 auto;
+		max-width: 480px;
+	}
+}

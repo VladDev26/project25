@@ -1,0 +1,15 @@
+.whatwedo{
+	&__elem{
+		padding: 2em 0;
+		h3{
+			font-size: 1.250em;
+			letter-spacing: 4px;
+			text-transform: uppercase;
+			padding: .5em 1em;
+		}
+		p{
+			font-size: 0.875em;
+			font-weight: $light;
+		}
+	}
+}

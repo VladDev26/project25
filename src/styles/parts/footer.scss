@@ -1,0 +1,27 @@
+.footer{
+	font-weight: $regular;
+	font-size: 0.875rem;
+	text-align: center;
+	padding: 1rem 0 2.5rem;
+
+	&__logo{
+		font-size: 0;
+
+		@include mQ(480px){
+			display: inline-block;
+		}
+	}
+
+	&__copyright{
+		vertical-align: top;
+		
+		span{
+			display: block;
+			padding: .7rem 1rem;
+		}
+
+		@include mQ(480px){
+			display: inline-block;
+		}
+	}
+}
