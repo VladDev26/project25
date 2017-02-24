@@ -1,9 +1,10 @@
-var path = require('path');
-var webpack = require('webpack');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+const path = require('path');
+const webpack = require('webpack');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
+const autoprefixer = require('autoprefixer');
 
-var production = new webpack.DefinePlugin({
+const production = new webpack.DefinePlugin({
   'process.env': {
     NODE_ENV: JSON.stringify('production')
   }
@@ -21,20 +22,21 @@ module.exports = {
   module: {
     rules: [
       { 
-        test: /\.js$/, 
-        exclude: /(node_modules)/,
-        loader: 'babel-loader',
-        options: { presets: ['es2015'] }
-      },
-      
-      { 
         test: /\.scss$/i, 
-        use: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
-      },
-
-      { 
-        test: /\.html$/i,
-        loader: "html-loader"
+        use: ExtractTextPlugin.extract([
+          'css-loader', 
+          'sass-loader',
+          {
+              loader: 'postcss-loader',
+              options: {
+                plugins: function () {
+                  return [
+                    require('autoprefixer')
+                  ];
+                }
+              }
+          }
+        ])
       },
 
       { 
